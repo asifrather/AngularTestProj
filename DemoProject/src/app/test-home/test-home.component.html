@@ -1,0 +1,37 @@
+<p>test-home works!</p>
+<h1>inside test comp</h1>
+
+<div class="container">
+    <div class="alert alert-info" *ngIf="showDiv">
+        {{message}}
+    </div>
+    <button class="btn btn-info" (click)="testMessage('zahid')">testMessage</button>
+    <button class="btn btn-warning" (click)="show()">show</button>
+    <button class="btn btn-danger" (click)="hide()">hide</button>
+
+
+    <div class="" >
+        <table class="table table-bordered">
+            <tr>
+                <th>category</th>
+                <th>title</th>
+                <th>price</th>
+            </tr>
+            <tr *ngFor="let data of apiResp;let i=index">
+                <td>{{data.category}}</td>
+                <td>{{data.title}}</td>
+                <td>{{data.price}}</td>
+                <td>
+                    <button (click)="edit(data)">Edit</button>
+                </td>
+
+
+                <!-- <td>{{i+1}}---{{data.id}} ====Length is {{records.length}}</td>
+                <td>{{i}}---{{data.name | uppercase}} ====== {{showDate | date}}</td> -->
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
