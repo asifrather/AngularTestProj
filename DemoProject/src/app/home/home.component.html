@@ -1,5 +1,19 @@
 
 <div class="container">
-    <p>home works!</p>
+   <form [formGroup]="registrationForm">
+        <label for="">Name</label>
+        <input type=" text" class="form-control mb-2" formControlName="name" />
+
+        <label for="">Password</label>
+        <input type=" Password" class="form-control mb-2" formControlName="password" />
+
+        <label for="">Addess</label>
+        <input type=" text" class="form-control mb-2" formControlName="address" />
+
+        <label for="">Contact</label>
+        <input type=" text" class="form-control mb-2" formControlName="contact" />
+
+        <button class="btn btn-primary" (click)="postData()">Save Details</button>
+   </form> 
 </div>
 

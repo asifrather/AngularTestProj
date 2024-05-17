@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DashboradServiceService } from '../dashborad-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -12,7 +13,7 @@ export class AboutComponent implements OnInit{
   public password:string=''
 
 
-  constructor( private _serv:DashboradServiceService){
+  constructor( private _serv:DashboradServiceService,private _route:Router){
 
   }
 
@@ -27,6 +28,10 @@ export class AboutComponent implements OnInit{
     console.log(form.touched)
     console.log(form.valid)
     alert(form.valid)
+
+    this._route.navigate(['home',2])
+
+
 
 
   }

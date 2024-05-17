@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboradServiceService } from '../dashborad-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-test-home',
@@ -7,7 +8,7 @@ import { DashboradServiceService } from '../dashborad-service.service';
   styleUrls: ['./test-home.component.css']
 })
 export class TestHomeComponent implements OnInit{
-  constructor(private _serv:DashboradServiceService){
+  constructor(private _serv:DashboradServiceService,private _route:Router){
     console.log('hell inside conso')
   }
   public message:string='hello user'
@@ -48,6 +49,7 @@ export class TestHomeComponent implements OnInit{
   }
   edit(data:any){
     console.log(data.id)
+    this._route.navigate(['home',data.id])
   }
 
 
